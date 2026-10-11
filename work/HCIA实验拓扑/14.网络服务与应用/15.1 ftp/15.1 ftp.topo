@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="837329F5-29F5-4e18-A30F-DAE42DDEA8FE" name="AR1" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-58-11-A8" com_port="2000" bootmode="0" cx="646.000000" cy="18.000000" edit_left="673" edit_top="72">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="39CAB708-3E93-427d-AA40-57B519C65B3F" name="AR2" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-64-6E-60" com_port="2001" bootmode="0" cx="1046.526001" cy="18.218994" edit_left="1073" edit_top="72">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="BBD9574A-1898-4380-8E37-E9E4DED0240C" name="LSW1" poe="0" model="S5700" settings="" system_mac="4C-1F-CC-AB-39-48" com_port="2002" bootmode="0" cx="846.000000" cy="168.000000" edit_left="873" edit_top="222">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+        <dev id="3A83327B-4876-412c-B403-C89032CB00DA" name="Server1" poe="0" model="Server" settings="-domain 0 -eth 54-89-98-5F-0A-E1 -ipaddr 100.1.1.2 -ipmask 255.255.255.0 -gateway 0.0.0.0 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 0.0.0.0 -ipv6dns 3000::1 -dnslist NULL" system_mac="54-89-98-E6-54-F4" com_port="0" bootmode="0" cx="1046.000000" cy="168.000000" edit_left="1073" edit_top="222">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="44177E11-5261-43a8-AE34-7CB76796CD92" name="Client1" poe="0" model="Client" settings="-domain 0 -eth 54-89-98-7C-45-D7 -ipaddr 100.1.1.1 -ipmask 255.255.255.0 -gateway 0.0.0.0 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 0.0.0.0 -ipv6dns 3000::1 -dnslist NULL" system_mac="54-89-98-51-73-3F" com_port="0" bootmode="0" cx="646.000000" cy="168.000000" edit_left="673" edit_top="222">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="837329F5-29F5-4e18-A30F-DAE42DDEA8FE" destDeviceID="39CAB708-3E93-427d-AA40-57B519C65B3F">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="716.183777" srcBoundRect_Y="45.000000" srcOffset_X="-12.000000" srcOffset_Y="8.000000" tarIndex="1" tarBoundRectIsMoved="1" tarBoundRect_X="1029.816284" tarBoundRect_Y="45.000000" tarOffset_X="-31.000000" tarOffset_Y="7.000000" />
+        </line>
+        <line srcDeviceID="44177E11-5261-43a8-AE34-7CB76796CD92" destDeviceID="BBD9574A-1898-4380-8E37-E9E4DED0240C">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="716.183777" srcBoundRect_Y="195.000000" srcOffset_X="-7.000000" srcOffset_Y="8.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="829.816223" tarBoundRect_Y="195.000000" tarOffset_X="-25.000000" tarOffset_Y="8.000000" />
+        </line>
+        <line srcDeviceID="BBD9574A-1898-4380-8E37-E9E4DED0240C" destDeviceID="3A83327B-4876-412c-B403-C89032CB00DA">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="916.183777" srcBoundRect_Y="195.000000" srcOffset_X="-18.000000" srcOffset_Y="8.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="1029.816284" tarBoundRect_Y="195.000000" tarOffset_X="-47.000000" tarOffset_Y="8.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="832" top="24" right="937" bottom="44" content="12.1.1.0/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="630" top="92" right="716" bottom="112" content="ftp客户端" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="1021" top="90" right="1126" bottom="110" content="ftp服务器端" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="4" top="7" right="308" bottom="327" content="实验目的：&#x0D;&#x0A;1.理解建立FTP连接的过程&#x0D;&#x0A;2.掌握FTP服务器参数的配置&#x0D;&#x0A;3.掌握与FTP服务器传输文件的方法&#x0D;&#x0A;&#x0D;&#x0A;实验步骤:&#x0D;&#x0A;1.配置路由器接口的IP&#x0D;&#x0A;2.开启FTP服务并创建用户&#x0D;&#x0A;3.下载与上传文件&#x0D;&#x0A;&#x0D;&#x0A;本次实验需要掌握的命令:&#x0D;&#x0A;ftp server enable //开启 ftp 功能&#x0D;&#x0A;ftp 10.0.12.1// 登录 ftp 服务器&#x0D;&#x0A;Get //下载 ftp 服务器的文件&#x0D;&#x0A;Bye //退出 ftp 服务器&#x0D;&#x0A;&#x0D;&#x0A;" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="811" top="143" right="925" bottom="163" content="100.1.1.0/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="659" top="-1" right="682" bottom="19" content=".1" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="1053" top="1" right="1076" bottom="21" content=".2" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="649" top="153" right="672" bottom="173" content=".1" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="1047" top="150" right="1070" bottom="170" content=".2" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+    </txttips>
+</topo>
