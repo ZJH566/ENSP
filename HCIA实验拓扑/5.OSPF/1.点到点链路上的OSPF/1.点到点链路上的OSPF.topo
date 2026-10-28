@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="A1708128-B2EA-485e-8DFE-7124760B06D6" name="R2" poe="0" model="Router" settings="" system_mac="54-89-98-CB-02-91" com_port="2001" bootmode="0" cx="791.000000" cy="56.000000" edit_left="818" edit_top="110">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="2" />
+                <interface sztype="Ethernet" interfacename="GE" count="4" />
+                <interface sztype="Serial" interfacename="Serial" count="4" />
+            </slot>
+        </dev>
+        <dev id="FFD7DBC8-7FEB-4ed0-97A5-43DB3711B854" name="R3" poe="0" model="Router" settings="" system_mac="54-89-98-B4-5B-68" com_port="2002" bootmode="0" cx="1091.000000" cy="56.000000" edit_left="1118" edit_top="110">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="2" />
+                <interface sztype="Ethernet" interfacename="GE" count="4" />
+                <interface sztype="Serial" interfacename="Serial" count="4" />
+            </slot>
+        </dev>
+        <dev id="C8C6B3E7-8911-4dee-A170-F1FA038E4079" name="R1" poe="0" model="Router" settings="" system_mac="54-89-98-EC-51-CF" com_port="2000" bootmode="0" cx="491.000000" cy="56.000000" edit_left="518" edit_top="110">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="2" />
+                <interface sztype="Ethernet" interfacename="GE" count="4" />
+                <interface sztype="Serial" interfacename="Serial" count="4" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="C8C6B3E7-8911-4dee-A170-F1FA038E4079" destDeviceID="A1708128-B2EA-485e-8DFE-7124760B06D6">
+            <interfacePair lineName="Serial" srcIndex="6" srcBoundRectIsMoved="1" srcBoundRect_X="561.183777" srcBoundRect_Y="83.000000" srcOffset_X="-23.000000" srcOffset_Y="9.000000" tarIndex="7" tarBoundRectIsMoved="1" tarBoundRect_X="774.816223" tarBoundRect_Y="83.000000" tarOffset_X="-29.000000" tarOffset_Y="11.000000" />
+        </line>
+        <line srcDeviceID="A1708128-B2EA-485e-8DFE-7124760B06D6" destDeviceID="FFD7DBC8-7FEB-4ed0-97A5-43DB3711B854">
+            <interfacePair lineName="Serial" srcIndex="6" srcBoundRectIsMoved="1" srcBoundRect_X="861.183777" srcBoundRect_Y="83.000000" srcOffset_X="-18.000000" srcOffset_Y="12.000000" tarIndex="7" tarBoundRectIsMoved="1" tarBoundRect_X="1074.816284" tarBoundRect_Y="83.000000" tarOffset_X="-31.000000" tarOffset_Y="12.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="599" top="54" right="740" bottom="74" content="192.168.12.0/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="919" top="51" right="1069" bottom="71" content="192.168.23.0/24 " fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="547" top="132" right="679" bottom="152" content="lo0 1.1.1.1/32" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="764" top="136" right="905" bottom="156" content="lo0 2.2.2.2/32 " fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="1009" top="131" right="1141" bottom="151" content="lo0 3.3.3.3/32" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="552" top="109" right="571" bottom="126" content=".1" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="768" top="108" right="787" bottom="125" content=".2" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="860" top="109" right="879" bottom="126" content=".2" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="1070" top="112" right="1089" bottom="129" content=".3" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="8" top="16" right="538" bottom="467" content="实验目的：&#x0D;&#x0A;1.在路由器上启用 OSPF 路由进程；&#x0D;&#x0A;2.启用参与路由协议的接口，并且通告网络及所在的区域；&#x0D;&#x0A;3.度量值 Cost 的计算；&#x0D;&#x0A;4.Hello 相关参数的配置；&#x0D;&#x0A;5.点到点链路上的 OSPF 特征；&#x0D;&#x0A;6.查看和调试 OSPF 路由协议相关信息。&#x0D;&#x0A;&#x0D;&#x0A;实验步骤:&#x0D;&#x0A;1.路由器相应IP地址的配置&#x0D;&#x0A;2.OSPF路由协议的配置&#x0D;&#x0A;3.查看OSPF邻居表、OSPF的LSDB表以及路由表&#x0D;&#x0A;4.查看接口状态&#x0D;&#x0A;&#x0D;&#x0A;本次实验需要掌握的命令：&#x0D;&#x0A;1.display ospf brief 查看 OSPF 的概要信息&#x0D;&#x0A;2.display ospf interface 显示 OSPF 的接口信息&#x0D;&#x0A;3.display ospf lsdb 显示 OSPF 的链路状态数据库（LSDB）信息&#x0D;&#x0A;4.display ospf peer 显示 OSPF 中各区域邻居的信息。&#x0D;&#x0A;5.display ospf routing 命令用来显示 OSPF 路由表的信息。&#x0D;&#x0A;6.Ospf 启动 OSPF 路由进程&#x0D;&#x0A;7.Rouer-id 配置路由器 ID&#x0D;&#x0A;8.Area 设置区域&#x0D;&#x0A;9.Network 宣告网络" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+    </txttips>
+</topo>

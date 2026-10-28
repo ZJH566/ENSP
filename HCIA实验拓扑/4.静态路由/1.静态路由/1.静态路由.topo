@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="6520E6C3-ABA3-4c45-965C-90B151E25915" name="AR3" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-7B-60-63" com_port="2002" bootmode="0" cx="1071.000000" cy="44.000000" edit_left="1098" edit_top="98">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="E21C48C5-96EA-4e17-81D1-ACDE25440DD6" name="AR2" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-CD-25-5C" com_port="2001" bootmode="0" cx="771.000000" cy="44.000000" edit_left="798" edit_top="98">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="9C0A825C-EB3B-4b41-99F0-AF6909D09A4B" name="AR1" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-71-39-AD" com_port="2000" bootmode="0" cx="471.000000" cy="44.000000" edit_left="498" edit_top="98">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="9C0A825C-EB3B-4b41-99F0-AF6909D09A4B" destDeviceID="E21C48C5-96EA-4e17-81D1-ACDE25440DD6">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="541.183777" srcBoundRect_Y="71.000000" srcOffset_X="-14.000000" srcOffset_Y="3.000000" tarIndex="1" tarBoundRectIsMoved="1" tarBoundRect_X="754.816223" tarBoundRect_Y="71.000000" tarOffset_X="-26.000000" tarOffset_Y="4.000000" />
+        </line>
+        <line srcDeviceID="E21C48C5-96EA-4e17-81D1-ACDE25440DD6" destDeviceID="6520E6C3-ABA3-4c45-965C-90B151E25915">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="841.183777" srcBoundRect_Y="71.000000" srcOffset_X="-20.000000" srcOffset_Y="4.000000" tarIndex="1" tarBoundRectIsMoved="1" tarBoundRect_X="1054.816284" tarBoundRect_Y="71.000000" tarOffset_X="-26.000000" tarOffset_Y="5.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="4" top="6" right="389" bottom="270" content="实验目的:&#x0D;&#x0A;1.掌握路由表的概念&#x0D;&#x0A;2.掌握route-static命令的使用&#x0D;&#x0A;3.理解根据需求正确配置静态路由&#x0D;&#x0A;&#x0D;&#x0A;实验步骤:&#x0D;&#x0A;1.IP地址的配置&#x0D;&#x0A;2.相邻路由器网络连通性测试&#x0D;&#x0A;3.静态路由的配置&#x0D;&#x0A;4.AR1与AR3网络连通性的测试&#x0D;&#x0A;&#x0D;&#x0A;本次实验需要掌握的命令:&#x0D;&#x0A;1.ip route-static//配置静态路由&#x0D;&#x0A;2.display ip routing-table//查看全局路由表" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="599" top="52" right="686" bottom="69" content="12.1.1.0/24" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="909" top="53" right="996" bottom="70" content="23.1.1.0/24" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="504" top="24" right="523" bottom="41" content=".1" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="764" top="28" right="783" bottom="45" content=".2" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="1066" top="29" right="1085" bottom="46" content=".3" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+    </txttips>
+</topo>

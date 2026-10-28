@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="D3EF25F8-4F52-4e9d-83FF-DD26D07418C8" name="AR2" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-34-1C-F3" com_port="2001" bootmode="0" cx="1039.187988" cy="38.895004" edit_left="1066" edit_top="93">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="16244672-16F2-409a-A940-EF8B00A610C5" name="AR1" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-59-42-15" com_port="2000" bootmode="0" cx="538.000000" cy="38.000000" edit_left="565" edit_top="90">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="16244672-16F2-409a-A940-EF8B00A610C5" destDeviceID="D3EF25F8-4F52-4e9d-83FF-DD26D07418C8">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="608.183777" srcBoundRect_Y="65.000000" srcOffset_X="-13.000000" srcOffset_Y="9.000000" tarIndex="1" tarBoundRectIsMoved="1" tarBoundRect_X="1022.816223" tarBoundRect_Y="65.000000" tarOffset_X="-28.000000" tarOffset_Y="6.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="583" top="30" right="715" bottom="50" content="192.168.1.1/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="907" top="31" right="1039" bottom="51" content="192.168.1.2/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="13" top="10" right="543" bottom="367" content="实验目的：&#x0D;&#x0A;1.掌握AAA认证授权方案的配置方法&#x0D;&#x0A;2.掌握创建域的方法&#x0D;&#x0A;3.掌握本地用户的创建方法&#x0D;&#x0A;4.理解基于域的用户管理的原理&#x0D;&#x0A;&#x0D;&#x0A;实验步骤:&#x0D;&#x0A;1.配置IP地址&#x0D;&#x0A;2.配置认证授权方案&#x0D;&#x0A;3.创建域并在域下应用AAA方案&#x0D;&#x0A;4.配置本地用户名和密码&#x0D;&#x0A;5.开启telnet功能&#x0D;&#x0A;&#x0D;&#x0A;本次实验需要掌握的命令:&#x0D;&#x0A;aaa //开启 AAA&#x0D;&#x0A;local-user ly@hcia password cipher 1234 //创建用户名和密码&#x0D;&#x0A;local-user user1 service-type telnet// 用户名的服务类型&#x0D;&#x0A;local-user user1 privilege level 15 //配置用户的权限&#x0D;&#x0A;authentication-mode aaa //认证模式为 AAA" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="994" top="108" right="1126" bottom="147" content="Telnet Server&#x0D;&#x0A;AAA" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+    </txttips>
+</topo>

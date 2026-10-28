@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="D6A51405-9A5D-4d45-BFCE-0BC61E80EEFD" name="LSW1" poe="0" model="S5700" settings="" system_mac="4C-1F-CC-10-01-3A" com_port="2000" bootmode="0" cx="252.000000" cy="137.000000" edit_left="279" edit_top="191">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+        <dev id="2439790A-8E7A-4aea-B49E-C36C6F2D65C0" name="AR1" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-E3-32-19" com_port="2001" bootmode="0" cx="377.000000" cy="146.000000" edit_left="404" edit_top="200">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="33C7CDC7-6971-44e3-90C6-3E3A2532B3FB" name="AR2" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-F2-6E-17" com_port="2002" bootmode="0" cx="514.000000" cy="143.000000" edit_left="541" edit_top="197">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="09E4A23E-CD5E-426c-BB54-D8F98E97072B" name="Server1" poe="0" model="Server" settings="-domain 0 -eth 54-89-98-48-56-E0 -ipaddr 10.0.30.1 -ipmask 255.255.255.0 -gateway 10.0.30.254 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 0.0.0.0 -ipv6dns 3000::1 -dnslist NULL" system_mac="54-89-98-84-69-14" com_port="0" bootmode="0" cx="645.000000" cy="146.000000" edit_left="672" edit_top="200">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="0A500F48-3544-4c76-8BD5-1DA79B48AE43" name="Client2" poe="0" model="Client" settings="-domain 0 -eth 54-89-98-E8-38-0C -ipaddr 10.0.20.1 -ipmask 255.255.255.0 -gateway 10.0.20.254 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 0.0.0.0 -ipv6dns 3000::1 -dnslist NULL" system_mac="54-89-98-E8-38-0C" com_port="0" bootmode="0" cx="105.000000" cy="213.000000" edit_left="132" edit_top="267">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="67AEC544-4668-466a-813A-3D02981315DE" name="Client1" poe="0" model="Client" settings="-domain 0 -eth 54-89-98-BB-19-35 -ipaddr 10.0.10.1 -ipmask 255.255.255.0 -gateway 10.0.10.254 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 0.0.0.0 -ipv6dns 3000::1 -dnslist NULL" system_mac="54-89-98-BB-19-35" com_port="0" bootmode="0" cx="127.000000" cy="80.000000" edit_left="154" edit_top="134">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="D6A51405-9A5D-4d45-BFCE-0BC61E80EEFD" destDeviceID="2439790A-8E7A-4aea-B49E-C36C6F2D65C0">
+            <interfacePair lineName="Copper" srcIndex="2" srcBoundRectIsMoved="0" srcBoundRect_X="322.072266" srcBoundRect_Y="167.101196" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="0" tarBoundRect_X="360.927734" tarBoundRect_Y="169.898804" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="2439790A-8E7A-4aea-B49E-C36C6F2D65C0" destDeviceID="33C7CDC7-6971-44e3-90C6-3E3A2532B3FB">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="0" srcBoundRect_X="447.173431" srcBoundRect_Y="172.054596" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="0" tarBoundRect_X="497.826569" tarBoundRect_Y="170.945404" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="33C7CDC7-6971-44e3-90C6-3E3A2532B3FB" destDeviceID="09E4A23E-CD5E-426c-BB54-D8F98E97072B">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="0" srcBoundRect_X="584.172424" srcBoundRect_Y="170.988678" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="0" tarBoundRect_X="628.827576" tarBoundRect_Y="172.011322" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="67AEC544-4668-466a-813A-3D02981315DE" destDeviceID="D6A51405-9A5D-4d45-BFCE-0BC61E80EEFD">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="0" srcBoundRect_X="193.291489" srcBoundRect_Y="124.916924" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="0" tarBoundRect_X="239.708511" tarBoundRect_Y="146.083084" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="0A500F48-3544-4c76-8BD5-1DA79B48AE43" destDeviceID="D6A51405-9A5D-4d45-BFCE-0BC61E80EEFD">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="0" srcBoundRect_X="170.360260" srcBoundRect_Y="220.167480" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="1" tarBoundRectIsMoved="0" tarBoundRect_X="240.639740" tarBoundRect_Y="183.832520" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="335" top="272" right="1026" bottom="523" content="ACL：&#x0D;&#x0A;acl 2000&#x0D;&#x0A;rule permit source 10.0.10.0 0.0.0.255&#x0D;&#x0A;rule deny source 10.0.20.0 0.0.0.255&#x0D;&#x0A;调用&#x0D;&#x0A;interface g0/0/3&#x0D;&#x0A;traffic-filter outbound acl 2000&#x0D;&#x0A;拒绝ftp&#x0D;&#x0A;acl 3000&#x0D;&#x0A;rule 5 deny tcp source 10.0.10.0 0.0.0.255 destination 10.0.30.1 0 destination-port eq ftp&#x0D;&#x0A;rule deny tcp source 10.0.20.0 0.0.0.255 destination 10.0.30.1 0 destination-port eq www&#x0D;&#x0A;interface g0/0/0&#x0D;&#x0A;traffic-filter inbound acl 3000&#x0D;&#x0A;&#x0D;&#x0A;time-range name 00:01 to 8:00 working-day&#x0D;&#x0A;rule 5.... time-range name" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="56" top="316" right="324" bottom="348" content="ip看图片&#x0D;&#x0A;配vlan，接口、vlanif；配ospf；配acl" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>
