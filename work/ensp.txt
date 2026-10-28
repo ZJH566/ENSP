@@ -1,0 +1,174 @@
+sy(view)
+sy sw1 (name)
+undo in en
+
+display ip interface brief          # 看VLANIF状态、IP
+display vlanif                      # 查看vlanif信息
+display ip routing-table            # 可以看到VLANIF产生的直连路由
+display acl all
+====
+接口、路由
+interface g0/0/1
+ip address 192.168.1.254 24
+dis ip routing-table 
+静态：ip route-static 10.0.10.0 24
+=====
+vlan:
+vlan batch 10 20
+inter g0/0/1
+port link-type access
+port default vlan 10
+
+display port vlan
+网关：**VLAN Interface，三层逻辑接口**，只有**三层交换机**才有这个能力。不同 VLAN 之间，靠 VLANIF 做三层转发
+interface vlanif 10
+ip address 10.0.10.254 24#网关
+interface vlanif 20
+ip address 10.0.20.254 24#网关
+interface vlanif 1
+ip address 10.0.11.1 24  #直连可直接ping通；注意若用vlanif2，接口3要在valn2里，配access（路由器不识别标签）
+======
+ospf
+interface g0/0/1
+ip address 192.168.1.254 24
+开启法一
+ospf 1(进程id) router-id 1.1.1.1
+area 0
+network 192...(相连接口） 0.0.0.0(通配符)
+法二：
+[接口]ospf enable 1(进程) area 0
+dis ip routing-table 
+
+[area]dis ospf lsdb router self-originate
+查看邻居dis ospf peer
+查看路由dis ospf routing
+
+[接口]dis dr-priority 10(越大越好)
+[接口]ospf authentication-mode ?(接口认证)
+[区域]authentication-mode ?(区域认证)
+====
+display stp brief
+stp mode stp
+stp priority
+端口stp cost 2000
+
+链路聚合
+int et 1
+mode ?
+trunkport g0/0/1
+trunkport g0/0/2
+display interface Eth-Trunk 1
+
+display eth-Trunk 1
+负载分担load-balance 
+===
+ACL：
+acl 2000
+rule permit source 10.0.10.0 0.0.0.255
+rule deny source 10.0.20.0 0.0.0.255
+调用
+interface g0/0/3
+traffic-filter outbound acl 2000
+拒绝ftp
+acl 3000
+rule 5 deny tcp source 10.0.10.0 0.0.0.255 destination 10.0.30.1 0 destination-port eq ftp
+rule deny tcp source 10.0.20.0 0.0.0.255 destination 10.0.30.1 0 destination-port eq www
+interface g0/0/0
+traffic-filter inbound acl 3000
+
+time-range name 00:01 to 8:00 working-day
+rule 5.... time-range name
+======
+NAT:
+静态1对1公网ip，基本不用
+方式一：接口视图下配置静态NAT
+[Huawei-GigabitEtherneto/o/o] nat static global { global-address} inside {host-address}
+eg:
+[port]nat static global 100.1.1.3 inside 10.0.10.1
+[port]nat static global 100.1.1.4 inside 10.0.20.1
+方式二：系统视图下配置静态NAT
+[Huawei] nat static global { global-address) inside {host-address
+[Huawei-GigabitEtherneto/o/O] nat static enable
+
+easy ip:
+dis nat session all
+nat server:
+[port]nat server protocol TCP global 100.1.1.3/current-interface(不能.2) 10000(外部不用80，易受攻击) inside 10.0.10.1 www
+dis nat server
+======
+WLAN:
+直接转发：
+（1)AP通过dhcp获取Ip地址
+[AC1]vlan 100
+[AC1]inter vlanif 100
+q
+dhcp enable
+inter vlanif 100
+ip add 10.0.100.1 24
+dhcp select interface
+
+[LSW1]vlan batch 10 100
+inter g0/0/2
+port link-type trunk
+port trunk allow-pass vlan 10 100	
+inter g0/0/4
+port link-type trunk
+port trunk allow-pass vlan 10 100
+
+[LSW2]vlan batch 10 100
+inter g0/0/2
+port link-type trunk
+port trunk allow-pass vlan 10 100	#业务和管理
+port trunk pvid vlan 100	#不然ap发的是vlan 1 ac不会回dhcp
+dis port vlan
+inter g0/0/1
+port link-type trunk
+port trunk allow-pass vlan 10 100	
+
+[AP1]dis ip int br		#配dhcp后,169.254.1.1/16(dhcp获取不到后临时ip)
+inter g0/0/1
+port link-type trunk	#access也行
+port trunk allow-pass vlan 10 
+	
+(2)capwap隧道
+[AC1]capwap source interface vlanif 100
+waln
+ap-group name hcia	#创建ap组
+ap-id 1 ap-mac 00e0-...
+ap-name ap1
+ap-group hcia	
+dis ap all
+[AP1]dis inter vlanif 1	#看mac
+2
+[AC1]wlan
+ssid-profile name wlan-ssid
+ssid huawei
+q
+security-profile name wlan-sec
+security wpa-wpa2 psk pass-phrase huawei@123 aes(加密方式）
+q
+vap-profile name wlan-vap
+forward-mode direct-forward
+service-vlan vlan-id 10
+ssid-profile wlan-ssid
+security-profile wlan-sec
+hcia调用模板：
+ap-group name hcia
+vap-profile wlan-vap wlan 1(可放射16个) radio all(2.4G+5G)
+lsw1开dhcp给sta1ip：		#ac1的dhcp是给ap的
+[SW1]dhcp enable
+inter vlanif 10
+ip add 10.0.10.254 24
+dhcp se i
+网关和ar1配置：
+[SW1]q
+inter vlanif 1	#g0/0/1默认vlan1 去标签
+ip add 10.0.11.2 24
+q
+ip route-static 1.1.1.1 32 10.0.11.1	#ac1不转发数据，不用配路由
+[AR1]int lo0	#换回
+ip add 1.1.1.1 32
+q
+int g0/0/0
+ip add 10.0.11.1 24
+ip route-static 10.0.11.0 24 10.0.11.2		#到时候试试用不用配sw1的g0/0/1 access，/trunk?

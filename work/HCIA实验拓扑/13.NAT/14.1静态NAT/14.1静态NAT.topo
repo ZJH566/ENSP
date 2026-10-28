@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="E05D912A-48B3-4333-91B3-7631EC484531" name="LSW1" poe="0" model="S5700" settings="" system_mac="4C-1F-CC-24-3F-7C" com_port="2000" bootmode="0" cx="233.200012" cy="392.382019" edit_left="260" edit_top="446">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+        <dev id="7B6D46A3-D931-4325-A300-D343D178F7E3" name="Server1" poe="0" model="Server" settings="-domain 0 -eth 54-89-98-D2-4B-09 -ipaddr 200.1.1.2 -ipmask 255.255.255.0 -gateway 200.1.1.1 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 0.0.0.0 -ipv6dns 3000::1 -dnslist NULL" system_mac="54-89-98-1B-3D-3A" com_port="0" bootmode="0" cx="833.817017" cy="392.720032" edit_left="860" edit_top="446">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="4B0DC0BE-FCB9-49d4-B095-CFAF7C564D6C" name="AR2" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-D8-2E-A8" com_port="2002" bootmode="0" cx="633.000000" cy="392.000000" edit_left="660" edit_top="446">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="1ECC06DA-33C3-4068-828A-D30A0D82C7AD" name="PC1" poe="0" model="PC" settings=" -simpc_ip 192.168.1.1  -simpc_mask 255.255.255.0  -simpc_gateway 192.168.1.254  -simpc_mac 54-89-98-26-2E-1A  -simpc_mc_dstip 0.0.0.0  -simpc_mc_dstmac 00-00-00-00-00-00  -simpc_dns1 0.0.0.0  -simpc_dns2 0.0.0.0  -simpc_ipv6 ::  -simpc_prefix 128  -simpc_gatewayv6 ::  -simpc_dhcp_state 0  -simpc_dhcpv6_state 0  -simpc_dns_auto_state 0  -simpc_igmp_version 1  -simpc_group_ip_start 0.0.0.0  -simpc_src_ip_start 0.0.0.0  -simpc_group_num 0  -simpc_group_step 0  -simpc_src_num 0  -simpc_src_step 0  -simpc_type MODE_IS_INCLUDE " system_mac="54-89-98-26-2E-1A" com_port="0" bootmode="0" cx="33.916016" cy="292.661987" edit_left="60" edit_top="346">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="5C5A3BDC-DAFC-4040-B0CF-82B7EB796F5B" name="AR1" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-CB-05-F7" com_port="2001" bootmode="0" cx="433.829102" cy="392.382019" edit_left="460" edit_top="446">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="41D07CAF-83D3-4bca-BEEF-CF8EBB24E4F1" name="PC2" poe="0" model="PC" settings=" -simpc_ip 192.168.1.2  -simpc_mask 255.255.255.0  -simpc_gateway 192.168.1.254  -simpc_mac 54-89-98-79-32-76  -simpc_mc_dstip 0.0.0.0  -simpc_mc_dstmac 00-00-00-00-00-00  -simpc_dns1 0.0.0.0  -simpc_dns2 0.0.0.0  -simpc_ipv6 ::  -simpc_prefix 128  -simpc_gatewayv6 ::  -simpc_dhcp_state 0  -simpc_dhcpv6_state 0  -simpc_dns_auto_state 0  -simpc_igmp_version 1  -simpc_group_ip_start 0.0.0.0  -simpc_src_ip_start 0.0.0.0  -simpc_group_num 0  -simpc_group_step 0  -simpc_src_num 0  -simpc_src_step 0  -simpc_type MODE_IS_INCLUDE " system_mac="54-89-98-79-32-76" com_port="0" bootmode="0" cx="33.880981" cy="492.036987" edit_left="60" edit_top="546">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="1ECC06DA-33C3-4068-828A-D30A0D82C7AD" destDeviceID="E05D912A-48B3-4333-91B3-7631EC484531">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="98.624733" srcBoundRect_Y="338.312378" srcOffset_X="17.000000" srcOffset_Y="-3.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="221.375259" tarBoundRect_Y="399.687622" tarOffset_X="-44.000000" tarOffset_Y="1.000000" />
+        </line>
+        <line srcDeviceID="41D07CAF-83D3-4bca-BEEF-CF8EBB24E4F1" destDeviceID="E05D912A-48B3-4333-91B3-7631EC484531">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="98.624733" srcBoundRect_Y="499.687622" srcOffset_X="7.000000" srcOffset_Y="-1.000000" tarIndex="1" tarBoundRectIsMoved="1" tarBoundRect_X="221.375259" tarBoundRect_Y="438.312378" tarOffset_X="-53.000000" tarOffset_Y="-10.000000" />
+        </line>
+        <line srcDeviceID="E05D912A-48B3-4333-91B3-7631EC484531" destDeviceID="5C5A3BDC-DAFC-4040-B0CF-82B7EB796F5B">
+            <interfacePair lineName="Copper" srcIndex="2" srcBoundRectIsMoved="1" srcBoundRect_X="303.183777" srcBoundRect_Y="419.000000" srcOffset_X="-7.000000" srcOffset_Y="2.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="416.816223" tarBoundRect_Y="419.000000" tarOffset_X="-28.000000" tarOffset_Y="5.000000" />
+        </line>
+        <line srcDeviceID="5C5A3BDC-DAFC-4040-B0CF-82B7EB796F5B" destDeviceID="4B0DC0BE-FCB9-49d4-B095-CFAF7C564D6C">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="503.183777" srcBoundRect_Y="419.000000" srcOffset_X="-10.000000" srcOffset_Y="6.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="616.816223" tarBoundRect_Y="419.000000" tarOffset_X="-30.000000" tarOffset_Y="5.000000" />
+        </line>
+        <line srcDeviceID="4B0DC0BE-FCB9-49d4-B095-CFAF7C564D6C" destDeviceID="7B6D46A3-D931-4325-A300-D343D178F7E3">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="703.183777" srcBoundRect_Y="419.000000" srcOffset_X="-10.000000" srcOffset_Y="9.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="816.816223" tarBoundRect_Y="419.000000" tarOffset_X="-51.000000" tarOffset_Y="9.000000" />
+        </line>
+    </lines>
+    <shapes>
+        <shape type="1" filloption="0" color="4259584" upleftcorner="17,299" width="440" height="285" startpt="0,0" endpt="0,0" borderStyle="0" borderWidth="1" />
+        <shape type="1" filloption="0" color="255" upleftcorner="467,298" width="433" height="286" startpt="0,0" endpt="0,0" borderStyle="0" borderWidth="1" />
+    </shapes>
+    <txttips>
+        <txttip left="96" top="302" right="228" bottom="322" content="192.168.1.1/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="82" top="539" right="214" bottom="559" content="192.168.1.2/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="328" top="365" right="478" bottom="385" content="192.168.1.254/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="479" top="442" right="593" bottom="462" content="100.1.1.1/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="560" top="373" right="674" bottom="393" content="100.1.1.2/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="292" top="310" right="333" bottom="330" content="内网" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="518" top="311" right="559" bottom="331" content="外网" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="6" top="8" right="491" bottom="272" content="实验目的：&#x0D;&#x0A;1.掌握静态NAT的特征&#x0D;&#x0A;2.掌握静态NAT基本配置和调试&#x0D;&#x0A;&#x0D;&#x0A;实验步骤:&#x0D;&#x0A;1.配置PC机的IP,掩码和网关&#x0D;&#x0A;2.配置路由器接口的IP&#x0D;&#x0A;3.配置AR1的静态路由&#x0D;&#x0A;4.AR1上配置静态NAT&#x0D;&#x0A;&#x0D;&#x0A;本次实验需要掌握的命令:&#x0D;&#x0A;nat static global 100.1.1.3 inside 192.168.1.1 //&#x0D;&#x0A;配置静态 NAT 将内网主机的私有地址一对一映射到公有地址&#x0D;&#x0A;" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="680" top="453" right="794" bottom="473" content="200.1.1.1/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+        <txttip left="766" top="375" right="880" bottom="395" content="200.1.1.2/24" fontname="Consolas" fontstyle="0" editsize="120" txtcolor="-16777216" txtbkcolor="-1" charset="1" />
+    </txttips>
+</topo>
