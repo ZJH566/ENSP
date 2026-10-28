@@ -1,0 +1,106 @@
+无线网络 适配器出现问题
+B站
+stm32->10
+您的安装可能需要执行其他配置步骤。  1。以下产品需要安装支持的编译器:  Simulink Coder 8.12 Simulink Real-Time 6.6 MATLAB Coder 3.3  2。此安装完成后，应按照从 www.mathworks.com/distconfig 获取的说明中所述继续配置 MATLAB Distributed Computing Server。  3。MATLAB Compiler 6.4 要求安装支持的编译器以创建 Excel 加载项  4。MATLAB Compiler SDK 6.3.1 要求安装以下程序:  ● .NET Framework，用于创建与 Excel 集成的 .NET 程序集和可部署的存档 ● 支持的编译器，用于创建 COM 组件、C 和 C++ 共享库 ● Java JDK，用于创建 Java 包 
+
+co-sight,hello-agnet
+ ~\.claude\plans\iridescent-hatching-token.md
+
+"Docker Desktop Installer.exe" install --accept-license --installation-dir="D:\Docker" --wsl-default-data-root="D:\DockerData"
+pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m uvicorn web_app:app --host 0.0.0.0 --port 8080
+
+# 关闭（用来跑ENSP）
+bcdedit /set hypervisorlaunchtype off
+# 打开（用来跑Docker WSL2）
+bcdedit /set hypervisorlaunchtype auto
+------
+法一:docker save defect-agent | ssh user@192.168.98.251 'docker load'
+
+# 建一次，之后一直用
+docker context create prod --docker "host=tcp://192.168.98.251:2375"
+# 直接推到远端 daemon 
+docker save defect-agent | docker --context prod load 
+# 或者干脆在远端构建
+docker --context prod build --provenance=false -t defect-agent_module ./defect_agent
+
+213先：
+docker tag defect-agent:0.1.0 127.0.0.1:5000/defect-agent:0.1.0#打上仓库前缀
+docker push 127.0.0.1:5000/defect-agent:0.1.0
+/v2/_catalog                → {"repositories":["defect-agent"]}
+/v2/defect-agent/tags/list  → {"name":"defect-agent","tags":["0.1.0"]}
+251：docker pull 192.168.98.213:5000/defect-agent:20261023
+------
+https://github.com/zhangchye/YiSaiTongUnLock.git	#yisaitongpojie
+192.168.98.213	192.168.101.213	192.168.0.48	10.10.8.212/22
+
+cd /c/Users/zhang/Desktop/test/agent/redmine/defect_agent
+
+# 1) 构建（--provenance=false 必须带，否则产物变 OCI manifest list，老 Docker load 报错）
+docker build --provenance=false -t defect-agent .
+
+# 2) 导出（Windows 用 -o 两步走，别用管道）
+cd ..
+docker save -o defect-agent.tar defect-agent
+
+# 3) 压缩
+gzip -f defect-agent.tar
+
+# 4) 校验
+sha256sum defect-agent.tar.gz
+docker load -i defect-agent.tar.gz
+
+希赛华为数通网工资料包
+链接: https://pan.baidu.com/s/16FebCRm-qmHxUxl_39B9sA?pwd=8h24 
+提取码: 8h24
+wireshark_5.6.4
+
+进程已结束，退出代码为 -1073740791 (0xC0000409)	eat136
+E:\AndroidStudio\a\a\app\build\outputs\apk\debug
+1.934033366
+1.942705384
+1.912651805
+1.892918623
+1.892520217
+1.891377
+1.890451514
+1.885596706
+1.894530608
+1.887448898
+1.877430146
+1.869404967
+1.86923359
+1.838520023
+1.801940487
+1.780976048
+1.662438585
+1.737116474
+1.588977144
+1.560761296
+
+TARMSTM.DLL
+-pSTM32F103C8
+
+can 5,3times,5
+
+电脑密码netplwiz
+驱动位置c:\SWSetup\SP138639
+netsh winsock reset
+
+该设备无法启动。 (代码 10)
+
+Windows 资源保护找到了损坏文件并成功修复了它们。
+对于联机修复，位于 windir\Logs\CBS\CBS.log 的 CBS 日志文件中
+有详细信息。例如 C:\Windows\Logs\CBS\CBS.log。对于脱机修复，
+/OFFLOGFILE 标记提供的日志文件中有详细信息。
+
+
+偷影子的人www.levoleurdombres.com
+
+D:\zhang\app\Xmp\profiles\截图
+home/zhang/.config/pip/pip.conf
+python3 -m venv path/to/venv.
+path/to/venv/bin/python 		 path/to/venv/bin/pip
+
+BPSK、QPSK等实/复基带AWGN仿真中的标准噪声添加方法
+https://chat.deepseek.com/share/za7m8cthvz9ujz6u3o
